@@ -17,7 +17,12 @@ rm build.zip || echo '';
     zip -r9 ../build.zip .
 )
 
-s3cmd put build.zip s3://$FUNCTION_BUCKET/build.zip
+s3cmd put ./build.zip s3://$FUNCTION_BUCKET/build.zip \
+  --access_key=$AWS_ACCESS_KEY \
+  --secret_key=$AWS_SECRET_KEY \
+  --region=ru-central1 \
+  --host=storage.yandexcloud.net \
+  --host-bucket=\%\(bucket\)s.storage.yandexcloud.net
 
 yc serverless function version create \
   --function-name=$FUNCTION_NAME \

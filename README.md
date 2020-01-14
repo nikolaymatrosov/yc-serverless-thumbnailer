@@ -6,3 +6,12 @@
 1. `npm run deploy`
 
 Код функции не уровня production, но как отправная точка вполне ок.
+
+#### Windows
+
+Deploy script можно запустить в mingw (git bash).
+Для его корректной работы вам может понадобиться
+1. Скачать и установить [GnuZip](http://gnuwin32.sourceforge.net/packages/zip.htm)
+1. Прописать `GnuZip` в path.
+
+Возможно потребуются права администаратора.
